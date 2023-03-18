@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "93ef5147-9d8b-40f7-9e0e-821630a1206f",
+		"name": "API COLLECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25934155"
+	},
+	"item": [
+		{
+			"name": "GET REQUESTS",
+			"item": [
+				{
+					"name": "TASK 6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code should be 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name should have string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Baseurl}}/collections/15036f85a35d875ecfdf?",
+							"host": [
+								"{{Baseurl}}"
+							],
+							"path": [
+								"collections",
+								"15036f85a35d875ecfdf"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TASK 7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code should be 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name should have string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData)\r",
+									"console.log(jsonData.name)\r",
+									"console.log(jsonData.folders_order[2])\r",
+									"console.log(jsonData.order[0])\r",
+									"console.log(jsonData.requests[10].url)\r",
+									"\r",
+									"\r",
+									"pm.test(\"verify that name is present\", function () {\r",
+									"       pm.expect(jsonData.name).to.eql(\"MyTutorCollection\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"verify that order 2 was recorded\", function () {\r",
+									"    pm.expect(jsonData.folders_order[2]).to.eql(\"312a1e48-ba5a-4eed-8754-67ea290151d4\");\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"verify that order 0 was recorded\", function () {\r",
+									"        pm.expect(jsonData.order[0]).to.eql(\"acd9e54c-f8ff-49ce-92c5-bd4ca1d3ca36\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"verify that url is displayed\", function () {\r",
+									"        pm.expect(jsonData.requests[10].url).to.eql(\"example.com \");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Baseurl}}/collections/15036f85a35d875ecfdf?",
+							"host": [
+								"{{Baseurl}}"
+							],
+							"path": [
+								"collections",
+								"15036f85a35d875ecfdf"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TASK 8",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code should be 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code name should have string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData)\r",
+									"console.log(jsonData.name)\r",
+									"console.log(jsonData.folders_order[2])\r",
+									"console.log(jsonData.order[0])\r",
+									"console.log(jsonData.requests[10].url)\r",
+									"\r",
+									"\r",
+									"pm.test(\"verify that name is present\", function () {\r",
+									"       pm.expect(jsonData.name).to.eql(\"MyTutorCollection\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"verify that order 2 was recorded\", function () {\r",
+									"    pm.expect(jsonData.folders_order[2]).to.eql(\"312a1e48-ba5a-4eed-8754-67ea290151d4\");\r",
+									"    \r",
+									"});\r",
+									"pm.test(\"verify that order 0 was recorded\", function () {\r",
+									"        pm.expect(jsonData.order[0]).to.eql(\"acd9e54c-f8ff-49ce-92c5-bd4ca1d3ca36\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"verify that url is displayed\", function () {\r",
+									"        pm.expect(jsonData.requests[10].url).to.eql(\"example.com \");\r",
+									"});\r",
+									"\r",
+									"pm.environment.set(\"Oluchi\", jsonData.name);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Baseurl}}/collections/15036f85a35d875ecfdf?",
+							"host": [
+								"{{Baseurl}}"
+							],
+							"path": [
+								"collections",
+								"15036f85a35d875ecfdf"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
